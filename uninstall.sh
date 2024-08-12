@@ -42,10 +42,10 @@ else
     # remove binaries
     echo "removing ${bin_dir}/reimage-kdialog"; rm "${bin_dir}/reimage-kdialog"
     # remove service menu desktop files
-    echo "removing ${desktop_dir}/reimage-compress-resize.desktop"; rm "${desktop_dir}/reimage-compress-resize.desktop"
-    echo "removing ${desktop_dir}/reimage-convert-rotate.desktop"; rm "${desktop_dir}/reimage-convert-rotate.desktop"
-    echo "removing ${desktop_dir}/reimage-metadata.desktop"; rm "${desktop_dir}/reimage-metadata.desktop"
-    echo "removing ${desktop_dir}/reimage-tools.desktop"; rm "${desktop_dir}/reimage-tools.desktop"
+    desktop_files=("reimage-compress-resize.desktop" "reimage-convert-rotate.desktop" "reimage-metadata.desktop" "reimage-tools.desktop")
+    for file in "${desktop_files[@]}"; do
+        echo "removing ${desktop_dir}/${file}"; rm "${desktop_dir}/${file}"
+    done
     # remove docs
     echo "removing ${doc_dir}"; rm -rf "${doc_dir}"
     echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
