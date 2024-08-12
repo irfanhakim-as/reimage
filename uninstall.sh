@@ -27,13 +27,11 @@ if [[ $EUID -eq 0 ]]; then
     desktop_dir="$(${qtpaths_binary} --locate-dirs GenericDataLocation kio/servicemenus | sed "s/.*://")"
     doc_dir="$(${qtpaths_binary} --query QT_INSTALL_PREFIX)/share/doc/kde-service-menu-reimage/"
     install_mode="system"
-    echo "Removing kde-service-menu-reimage system wide"
 else
     bin_dir="$HOME/.local/bin"
     desktop_dir="$(${qtpaths_binary} --locate-dirs GenericDataLocation kio/servicemenus | sed "s/:.*//")"
     doc_dir=$HOME"/share/doc/kde-service-menu-reimage/"
     install_mode="local"
-    echo "Removing kde-service-menu-reimage locally"
 fi
 
 # proceed with uninstallation only if required vars are set
