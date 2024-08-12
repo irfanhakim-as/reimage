@@ -23,13 +23,13 @@
 qtpaths_binary="${qtpaths_binary:-"qtpaths6"}"
 
 if [[ ${EUID} -eq 0 ]]; then
-    bin_dir="$(qtpaths6 --query QT_HOST_PREFIX)/bin"
-    desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/.*://")"
-    doc_dir="$(qtpaths6 --query QT_INSTALL_PREFIX)/share/doc/kde-service-menu-reimage/"
+    bin_dir="$(${qtpaths_binary} --query QT_HOST_PREFIX)/bin"
+    desktop_dir="$(${qtpaths_binary} --locate-dirs GenericDataLocation kio/servicemenus | sed "s/.*://")"
+    doc_dir="$(${qtpaths_binary} --query QT_INSTALL_PREFIX)/share/doc/kde-service-menu-reimage/"
     install_mode="system"
 else
     bin_dir="${HOME}/.local/bin"
-    desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/:.*//")"
+    desktop_dir="$(${qtpaths_binary} --locate-dirs GenericDataLocation kio/servicemenus | sed "s/:.*//")"
     doc_dir="${HOME}/share/doc/kde-service-menu-reimage/"
     install_mode="local"
 fi
