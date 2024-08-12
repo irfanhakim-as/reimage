@@ -34,20 +34,25 @@ else
     echo "Removing kde-service-menu-reimage locally"
 fi
 
-echo "removing ${bin_dir}/reimage-kdialog"
-rm "${bin_dir}/reimage-kdialog"
+# proceed with uninstallation only if required vars are set
+if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
+    echo "ERROR: Required variable(s) were not set successfully. Aborting uninstallation of kde-service-menu-reimage."
+else
+    echo "removing ${bin_dir}/reimage-kdialog"
+    rm "${bin_dir}/reimage-kdialog"
 
-echo "removing ${desktop_dir}/reimage-compress-resize.desktop"
-rm "${desktop_dir}/reimage-compress-resize.desktop"
-echo "removing ${desktop_dir}/reimage-convert-rotate.desktop"
-rm "${desktop_dir}/reimage-convert-rotate.desktop"
-echo "removing ${desktop_dir}/reimage-metadata.desktop"
-rm "${desktop_dir}/reimage-metadata.desktop"
-echo "removing ${desktop_dir}/reimage-tools.desktop"
-rm "${desktop_dir}/reimage-tools.desktop"
+    echo "removing ${desktop_dir}/reimage-compress-resize.desktop"
+    rm "${desktop_dir}/reimage-compress-resize.desktop"
+    echo "removing ${desktop_dir}/reimage-convert-rotate.desktop"
+    rm "${desktop_dir}/reimage-convert-rotate.desktop"
+    echo "removing ${desktop_dir}/reimage-metadata.desktop"
+    rm "${desktop_dir}/reimage-metadata.desktop"
+    echo "removing ${desktop_dir}/reimage-tools.desktop"
+    rm "${desktop_dir}/reimage-tools.desktop"
 
-echo "removing ${doc_dir}"
-rm -rf "${doc_dir}"
+    echo "removing ${doc_dir}"
+    rm -rf "${doc_dir}"
 
-echo
-echo "kde-service-menu-reimage has been removed. Good bye."
+    echo
+    echo "kde-service-menu-reimage has been removed. Good bye."
+fi
