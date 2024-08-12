@@ -48,5 +48,5 @@ else
     echo "removing ${desktop_dir}/reimage-tools.desktop"; rm "${desktop_dir}/reimage-tools.desktop"
     # remove docs
     echo "removing ${doc_dir}"; rm -rf "${doc_dir}"
-    echo; echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
+    echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
 fi
