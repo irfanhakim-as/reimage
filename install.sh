@@ -24,18 +24,19 @@ if [[ $EUID -eq 0 ]]; then
     bin_dir="$(qtpaths6 --query QT_HOST_PREFIX)/bin"
     desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/.*://")"
     doc_dir="$(qtpaths6 --query QT_INSTALL_PREFIX)/share/doc/kde-service-menu-reimage/"
-    echo "Installing kde-service-menu-reimage system wide"
+    install_mode="system"
 else
     bin_dir="$HOME/.local/bin"
     desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/:.*//")"
     doc_dir=$HOME"/share/doc/kde-service-menu-reimage/"
-    echo "Installing kde-service-menu-reimage locally"
+    install_mode="local"
 fi
 
 # proceed with installation only if required vars are set
 if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
     echo "ERROR: Required variable(s) were not set successfully. Aborting installation of kde-service-menu-reimage."
 else
+    echo "INFO: Installing kde-service-menu-reimage (${install_mode})..."
     install -pm 0755 bin/* "${bin_dir}"
     install -pm 0755 ServiceMenus/*.desktop "${desktop_dir}"
     install -d "${doc_dir}"
