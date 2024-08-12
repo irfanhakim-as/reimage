@@ -40,6 +40,8 @@ fi
 if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
     echo "ERROR: Required variable(s) were not set successfully. Aborting uninstallation of kde-service-menu-reimage."
 else
+    echo "INFO: Uninstalling kde-service-menu-reimage (${install_mode})..."
+
     echo "removing ${bin_dir}/reimage-kdialog"
     rm "${bin_dir}/reimage-kdialog"
 
