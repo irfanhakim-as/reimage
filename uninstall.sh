@@ -20,6 +20,8 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 #
 
+qtpaths_binary="${qtpaths_binary:-"qtpaths6"}"
+
 if [[ $EUID -eq 0 ]]; then
     bin_dir="$(qtpaths6 --query QT_HOST_PREFIX)/bin"
     desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/.*://")"
