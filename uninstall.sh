@@ -38,15 +38,15 @@ fi
 if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
     echo "ERROR: Required variable(s) were not set successfully. Aborting uninstallation of kde-service-menu-reimage."
 else
-    echo "INFO: Uninstalling kde-service-menu-reimage (${install_mode})..."
+    echo "INFO: Uninstalling kde-service-menu-reimage (${install_mode}) ..."
     # remove binaries
-    echo "removing ${bin_dir}/reimage-kdialog"; rm "${bin_dir}/reimage-kdialog"
+    echo "Removing ${bin_dir}/reimage-kdialog"; rm "${bin_dir}/reimage-kdialog"
     # remove service menu desktop files
     desktop_files=("reimage-compress-resize.desktop" "reimage-convert-rotate.desktop" "reimage-metadata.desktop" "reimage-tools.desktop")
     for file in "${desktop_files[@]}"; do
-        echo "removing ${desktop_dir}/${file}"; rm "${desktop_dir}/${file}"
+        echo "Removing ${desktop_dir}/${file}"; rm "${desktop_dir}/${file}"
     done
     # remove docs
-    echo "removing ${doc_dir}"; rm -rf "${doc_dir}"
+    echo "Removing ${doc_dir}"; rm -rf "${doc_dir}"
     echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
 fi

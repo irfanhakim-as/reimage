@@ -38,7 +38,7 @@ fi
 if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
     echo "ERROR: Required variable(s) were not set successfully. Aborting installation of kde-service-menu-reimage."
 else
-    echo "INFO: Installing kde-service-menu-reimage (${install_mode})..."
+    echo "INFO: Installing kde-service-menu-reimage (${install_mode}) ..."
     install -pm 0755 bin/* "${bin_dir}"
     install -pm 0755 ServiceMenus/*.desktop "${desktop_dir}"
     install -d "${doc_dir}"
