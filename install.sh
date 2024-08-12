@@ -28,7 +28,7 @@ if [[ $EUID -eq 0 ]]; then
 else
     bin_dir="$HOME/.local/bin"
     desktop_dir="$(qtpaths6 --locate-dirs GenericDataLocation kio/servicemenus | sed "s/:.*//")"
-    doc_dir=$HOME"/share/doc/kde-service-menu-reimage/"
+    doc_dir="$HOME/share/doc/kde-service-menu-reimage/"
     install_mode="local"
 fi
 
