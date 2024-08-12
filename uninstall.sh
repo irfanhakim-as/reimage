@@ -42,20 +42,13 @@ if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
 else
     echo "INFO: Uninstalling kde-service-menu-reimage (${install_mode})..."
     # remove binaries
-    echo "removing ${bin_dir}/reimage-kdialog"
-    rm "${bin_dir}/reimage-kdialog"
+    echo "removing ${bin_dir}/reimage-kdialog"; rm "${bin_dir}/reimage-kdialog"
     # remove service menu desktop files
-    echo "removing ${desktop_dir}/reimage-compress-resize.desktop"
-    rm "${desktop_dir}/reimage-compress-resize.desktop"
-    echo "removing ${desktop_dir}/reimage-convert-rotate.desktop"
-    rm "${desktop_dir}/reimage-convert-rotate.desktop"
-    echo "removing ${desktop_dir}/reimage-metadata.desktop"
-    rm "${desktop_dir}/reimage-metadata.desktop"
-    echo "removing ${desktop_dir}/reimage-tools.desktop"
-    rm "${desktop_dir}/reimage-tools.desktop"
+    echo "removing ${desktop_dir}/reimage-compress-resize.desktop"; rm "${desktop_dir}/reimage-compress-resize.desktop"
+    echo "removing ${desktop_dir}/reimage-convert-rotate.desktop"; rm "${desktop_dir}/reimage-convert-rotate.desktop"
+    echo "removing ${desktop_dir}/reimage-metadata.desktop"; rm "${desktop_dir}/reimage-metadata.desktop"
+    echo "removing ${desktop_dir}/reimage-tools.desktop"; rm "${desktop_dir}/reimage-tools.desktop"
     # remove docs
-    echo "removing ${doc_dir}"
-    rm -rf "${doc_dir}"
-    echo
-    echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
+    echo "removing ${doc_dir}"; rm -rf "${doc_dir}"
+    echo; echo "SUCCESS: kde-service-menu-reimage has been removed. Goodbye!"
 fi
