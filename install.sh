@@ -32,9 +32,13 @@ else
     echo "Installing kde-service-menu-reimage locally"
 fi
 
-install -pm 0755 bin/* "${bin_dir}"
-install -pm 0755 ServiceMenus/*.desktop "${desktop_dir}"
-install -d "${doc_dir}"
-install -pm 0644 doc/* "${doc_dir}"
-
-echo "Done!. kde-service-menu-reimage has been installed. Enjoy!"
+# proceed with installation only if required vars are set
+if [ -z "${bin_dir}" ] || [ -z "${desktop_dir}" ] || [ -z "${doc_dir}" ]; then
+    echo "ERROR: Required variable(s) were not set successfully. Aborting installation of kde-service-menu-reimage."
+else
+    install -pm 0755 bin/* "${bin_dir}"
+    install -pm 0755 ServiceMenus/*.desktop "${desktop_dir}"
+    install -d "${doc_dir}"
+    install -pm 0644 doc/* "${doc_dir}"
+    echo "SUCCESS: kde-service-menu-reimage has been installed. Enjoy!"
+fi
