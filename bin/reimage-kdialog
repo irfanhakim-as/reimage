@@ -1358,11 +1358,11 @@ kdialog_bin=$(which kdialog)
 
 magick_bin=$(which cjxl)
 [ -z "${magick_bin}" "${input}" ] && \
-	"${kdialog_bin}" --icon configure --title "${msg_common_software_not_found_title}" --error "${msg_common_cjxl_not_found_text}" && exit 2
+	"${kdialog_bin}" --icon configure --title "${msg_common_software_not_found_title}" --error "${msg_common_magick_not_found_text}" && exit 2
 
 magick_bin=$(which djxl)
 [ -z "${magick_bin}" "${input}" ] && \
-	"${kdialog_bin}" --icon configure --title "${msg_common_software_not_found_title}" --error "${msg_common_cjxl_not_found_text}" && exit 2
+	"${kdialog_bin}" --icon configure --title "${msg_common_software_not_found_title}" --error "${msg_common_magick_not_found_text}" && exit 2
 
 magick_bin=$(which magick)
 [ -z "${magick_bin}" "${input}" ] && \
